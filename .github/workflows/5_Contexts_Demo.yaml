@@ -1,4 +1,4 @@
-name: Contexts Demo
+name: Contexts Demo with Variables
 on: workflow_dispatch # Change to push when running workflow
 jobs:
   echo-data:
