@@ -1,4 +1,4 @@
-name: Contexts Demo
+name: Contexts Demo with Variables
 run-name: Contexts Demo | DEBUG - ${{ inputs.debug }}
 on: 
     workflow_dispatch:
