@@ -1,16 +1,15 @@
-name:  basic workflow
+name:  basic workflow-1
 
 # Events that trigger workflows
 on: 
-  push:
-    branches:
-      - main
-      - release/*
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *' # Run every day at midnight UTC
+  # schedule:
+  #   - cron: '0 0 * * *' # Run every day at midnight UTC
   workflow_dispatch:
 
 jobs:
