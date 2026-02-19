@@ -1,4 +1,4 @@
-name: Using Actions to run React app
+name: Using Actions to run Demo React App
 on: workflow_dispatch # Change to push when running workflow
 jobs:
     build-job-1:
