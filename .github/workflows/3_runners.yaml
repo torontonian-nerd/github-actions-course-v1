@@ -1,0 +1,13 @@
+name: Runners Demo
+
+on: 
+    push:
+
+jobs:
+    ubuntu-echo-job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show OS
+              run: |
+                echo "This is a demo to print the OS"
+                echo "Runner OS: $RUNNER_OS"
