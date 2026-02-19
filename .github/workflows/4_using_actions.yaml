@@ -1,6 +1,6 @@
 name: Actions Demo
 
-on: push
+on: workflow_dispatch # Initial value is push, updated to not accidently run when pushing to github
 
 jobs:
     build-job-1:
@@ -20,4 +20,4 @@ jobs:
             - name: Install dependencies
               run: npm ci # Run in react-app dir
             - name: Run unit tests
-              run: npm run test
+              run: npm run test -- --run

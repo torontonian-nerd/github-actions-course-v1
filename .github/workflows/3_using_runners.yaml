@@ -1,6 +1,6 @@
 name: Runners Demo
 
-on: push
+on: workflow_dispatch # Initial value is push, updated to not accidently run when pushing to github
 
 jobs:
     job-1-linux-runner:
