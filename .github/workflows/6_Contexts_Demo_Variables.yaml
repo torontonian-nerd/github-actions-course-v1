@@ -1,5 +1,11 @@
 name: Contexts Demo
-on: workflow_dispatch # Change to push when running workflow
+run-name: Contexts Demo | DEBUG - ${{ inputs.debug }}
+on: 
+    workflow_dispatch:
+        inputs:
+            debug:
+                type: boolean
+                default: false
 jobs:
   echo-data:
     runs-on: ubuntu-latest
