@@ -1,7 +1,6 @@
 name: Runners Demo
 
-on: 
-    push:
+on: push
 
 jobs:
     job-1-linux-runner:
