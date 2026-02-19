@@ -1,7 +1,5 @@
 name: Contexts Demo
-on:
-    push:
-    workflow_dispatch:
+on: push
 jobs:
     echo-data:
         runs-on: ubunut-latest
