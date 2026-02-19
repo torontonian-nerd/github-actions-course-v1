@@ -1,0 +1,17 @@
+# Name of Workflow
+name: Basic Workflow
+# Events : These trigger workflows
+on: workflow_dispatch # Change to push when running workflow
+# Jobs
+jobs:
+  # Name of the job
+  echo-job:
+    # Runners
+    runs-on: ubuntu-latest
+    # Job Steps
+    steps:
+      - name: Say Hello
+        run: echo "Hello"
+      - name: Show the workflow trigger
+        # github.event_name is a workflow context that prints what Event was used to trigger workflow
+        run: echo "Triggered by ${{ github.event_name }}"

@@ -1,7 +1,5 @@
-name: Actions Demo
-
-on: workflow_dispatch # Initial value is push, updated to not accidently run when pushing to github
-
+name: Using Actions to run React app
+on: workflow_dispatch # Change to push when running workflow
 jobs:
     build-job-1:
         runs-on: ubuntu-latest

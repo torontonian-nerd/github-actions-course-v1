@@ -1,12 +1,11 @@
 name: Runners Demo
-
-on: workflow_dispatch # Initial value is push, updated to not accidently run when pushing to github
-
+on: workflow_dispatch # Change to push when running workflow
 jobs:
     job-1-linux-runner:
         runs-on: ubuntu-latest
         steps:
             - name: Show OS
+              # RUNNER_OS is an env varibale 
               run: |
                 echo "This job is running on an Ubuntu runner"
                 echo "Runner OS: $RUNNER_OS"
