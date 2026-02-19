@@ -2,7 +2,7 @@ name: Contexts Demo
 on: push
 jobs:
     echo-data:
-        runs-on: ubunut-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Display information
               run: |
