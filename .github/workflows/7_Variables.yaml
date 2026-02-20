@@ -1,0 +1,55 @@
+name: Using Variables
+on:
+    workflow_dispatch:
+env:
+    WORFLOW_VARIABLE_1: 'rahul'
+    WORKFLOW_VARIABLE_2: 007
+jobs:
+    echo-variables-job:
+        runs-on: ubuntu-latest
+        env:
+            JOB_VARIABLE_1: 'Summer is bad , Winter is good'
+            JOB_VARIABLE_2: 127867
+        steps:
+          - name: Print variables
+            env:
+              STEP_VARIABLE_1: 'slash' 
+              STEP_VARIABLE_2: 'music is always good'
+            run: |
+                echo "WORFLOW_VARIABLE_1 is : ${{ env.JOB_VARIABLE_1}}"
+                echo "WORFLOW_VARIABLE_2 is : ${{ env.JOB_VARIABLE_2}}"
+                echo "JOB_VARIABLE_1 is : ${{ env.JOB_VARIABLE_1}}"
+                echo "JOB_VARIABLE_2 is : ${{ env.JOB_VARIABLE_2}}"
+                echo "STEP_VARIABLE_1 is : ${{ env.STEP_VARIABLE_1}}"
+                echo "STEP_VARIABLE_2 is : ${{ env.STEP_VARIABLE_2}}"
+    echo-repo-variables-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print repo variables
+              run: |
+                echo "MY_VAR is : ${{vars.MY_VAR}}"
+    echo-env-variables-job:
+        runs-on: ubuntu-latest
+        environment: TARGET_VAR
+        steps:
+            - name: Print repo variables
+              run: |
+                echo "TARGET_VAR_1 is : ${{vars.MY_VAR}}"
+                echo "TARGET_VAR_2 is : ${{vars.TARGET_VAR_1}}
+                echo "TARGET_VAR_2 is : ${{vars.TARGET_VAR_2}}
+
+
+
+            
+            
+
+
+
+
+
+
+    
+
+
+
+

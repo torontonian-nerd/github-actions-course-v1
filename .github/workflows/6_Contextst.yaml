@@ -7,15 +7,9 @@ on:
             debug: # Not available for push events 
                 type: boolean
                 default: false
-env:
-    VARIABLE_1: 'value of variable_1'
-    VARIABLE_2: 'value of variable_2'
 jobs:
     echo-job:
         runs-on: ubuntu-latest
-        env:
-            MY_ROLE_NUMBER: 007
-            MY_NAME: 'rahul'
         steps:
           - name: '[debug] Print workflow data using Contexts'
             if: inputs.debug
@@ -24,25 +18,8 @@ jobs:
               echo "Workflow: ${{ github.workflow }}"
               echo "Run ID: ${{ github.run_id }}"
               echo "Run Number: ${{ github.run_number }}"
-          - name: Retrieve value of variable
-            run: |
-              echo "Variable value is : ${{ vars.MY_VAR }}"
-          - name: Print values of Env variables
-            run: |
-              echo "${{ env.MY_NAME}}"
-              echo "${{env.MY_ROLE_NUMBER}}"
-              echo "${{env.VARIABLE_1}}"
-              echo "${{env.VARIABLE_2}}"
           - name: '[debug] Print when triggered from main'
             if: inputs.debug && github.ref == 'refs/heads/main'
             run: echo 'I was triggered from main'
           - name: Greeting
             run: echo "Hello, world"
-            
-    print-env-job:
-         runs-on: ubuntu-latest
-         steps:
-           - name: Print Env Variables
-             run: |
-               echo "The : $VARIABLE_1"
-               echo "The : $VARIABLE_2"
